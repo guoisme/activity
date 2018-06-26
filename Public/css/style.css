@@ -1,0 +1,38 @@
+*{margin: 0;padding: 0;}
+a{text-decoration: none;cursor: pointer;}
+input, textarea, button, a {outline: 0;}
+a:hover {text-decoration: none;}
+body {line-height: 1.6;font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;color: #666;font-size: 14px;
+}
+/*html {-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}*/
+.body {width: 1200px;margin-left: auto;margin-right: auto;padding: 0px 0px 88px;}
+.footer{min-width:1200px;padding: 15px 0;color: #000;text-align: center;background-color: #fff;margin-top: 20px;}
+.header{min-width: 1200px;}
+/*icon*/
+.icon_menu {margin-right: 10px;margin-top: -0.2em;}
+.icon_menu {width: 18px;height: 18px;vertical-align: middle;display: inline-block;}
+@media (min-width: 1200px){
+    .container {width: 1230px;margin-left: auto;margin-right: auto;}
+}
+body,html{background: url(../img/background.jpg);background-size:cover;}
+/*navbar*/
+.navbar {position: relative;min-height: 50px;margin-bottom: 36px;padding-top:10px;border: 1px solid transparent;}
+.navbar-brand:hover{color:#9d9d9d!important;}
+.navbar-inverse {background-color: #fff;border-color: #d9dadc;border-bottom: 1px solid #d9dadc;}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {background-color: #fff;color:#9d9d9d;}
+.navbar-inverse .navbar-toggle .icon-bar {background-color: #666;}
+.navbar-inverse .navbar-nav>li>a:hover{background-color: #fff;color:#0071cb;text-decoration: underline;}
+.logo{color: #000!important}
+/*head*/
+.member_head img{width:40px;height:40px;background:red;margin-top:-19px;margin-right:5px;}
+/*body*/
+.contain_box{min-height: 500px;,max-width: 1000px;}
+.right_contain{padding:20px;}
+.col_side {width: 17.5%;max-width: 208px; height:100%;argin:0px;padding:0px;background-color:#fff;display: table-cell;vertical-align: top;word-wrap: break-word;word-break: break-all;border: 1px solid #d9dadc;}
+.col_main {width: 82.5%;height: 100%;margin:0px;padding:0px;border: 1px solid #d9dadc;border-left:none;background-color:#fff;display: table-cell;vertical-align: top;word-wrap: break-word;word-break: break-all;}
+/*左侧菜单*/
+.col_side ul{padding:0px;margin:0px;margin-top:13px;width:auto;height:auto;float:left;border-bottom:1px solid #2f2f2f;padding-bottom:20px;}
+.col_side ul:last-child{border:none;}
+.col_side ul li{list-style-type: none;width:100%;float:left;line-height: 34px;cursor: pointer;display:block;}
+.col_side ul li:hover{background-color:#f4f5f9;}
+.col_side ul li a {display: block;padding: 0 0 0 58px;width: auto;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;color: #666;}

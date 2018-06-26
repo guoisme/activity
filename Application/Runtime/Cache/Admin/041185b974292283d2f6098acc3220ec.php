@@ -1,0 +1,104 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>后台登录</title>
+		<link rel="stylesheet" href="/activity/Public/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/activity/Public/css/style.css" />
+		<script type="text/javascript" src="/activity/Public/js/jquery-2.1.3.min.js" ></script>
+        <link rel="icon" type="image/png" href="/activity/Avatar/logo.png">
+		<script type="text/javascript" src="/activity/Public/js/bootstrap.min.js" ></script>
+		<style type="text/css">
+			.main{/*background:url(/activity/Public/img/bg.jpg) no-repeat;*/min-height: 500px;background-size: cover;padding: 20px;
+             }
+             .main_content{width: 350px;min-height: 400px;background-color: #fff;margin:20px auto;
+             	border:1px solid #e7e8eb;padding: 10px;}
+            .form_input{float:right;top:-23px;right:5px}
+            .form-group{margin-bottom: 25px;}
+            .pwd:hover{cursor: pointer;}
+            .login{width: 100%;background-color: #000;color: #fff;}
+		</style>
+	</head>
+	<body>
+		<header class="header">
+            <nav class="navbar navbar-inverse <!--navbar-fixed-top-->" id="headernav">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand logo" href="javascript:void(0)">华广组队平台</a>
+                    </div>              
+                </div>
+            </nav>
+        </header>
+        <div class="main">
+        	<div class="main_content">
+        		<h3 class="title">后台登录</h3>
+        		<form id="loginForm" method="post">
+                        <div class="form-group">
+                            <label for="username">账号</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="用户名">
+                            <span class="glyphicon glyphicon-user form_input"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密码</label>
+                            <input type="password" class="form-control password1"  placeholder="密码">
+                            <input type="text" class="form-control password2"  style="display:none"  placeholder="密码">
+                            <span class="glyphicon glyphicon-eye-close form_input pwd"></span>
+                        </div>
+                        <button class="btn login" >登录</button>
+                    </form>
+        	</div>
+        </div>
+         <div class="footer">
+    <div class="links_item"><p class="copyright">郭大侠出品</p> </div>
+</div>
+     <script type="text/javascript">
+     	$(".pwd").click(function(){
+    	    var $val=$(".password1").val();
+            var $val2=$(".password2").val();
+    	    var display=$(".password1").css("display");//闭眼
+            if(display=="none"){
+                $(".password1").val($val2);
+                $(".password2").hide();
+                $(".password1").show();       
+                $(".pwd").removeClass("glyphicon-eye-open");
+                $(".pwd").addClass("glyphicon-eye-close");
+            }else{
+       	        $(".password2").val($val);
+                $(".password1").hide();
+                $(".password2").show();
+                $(".pwd").removeClass("glyphicon-eye-close");
+                $(".pwd").addClass("glyphicon-eye-open");
+            }
+        });
+        $(".login").click(function(){
+            var $val=$(".password1").val();
+            var $val2=$(".password2").val();
+            var username=$("#username").val();
+            var password;
+            if($val){
+        	    password=$val;
+            }else{
+        	    password=$val2;
+            }
+    	    $.ajax({
+                type: 'POST', 
+                url: '/activity/index.php/admin/index/check_login', 
+                data:"username="+username+"&password="+password, 
+                dataType: 'JSON', 
+                success: function(json) {
+            	    if(json){           		
+            		    window.location.href="http://localhost/activity/index.php/Admin/index/index.html";
+            	    }else{
+                      alert("账号或密码错误");
+            	    } 
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert(XMLHttpRequest.status);
+                    alert(XMLHttpRequest.readyState);
+                    alert(textStatus);
+                },
+            });
+        });
+     </script>
+	</body>
+</html>

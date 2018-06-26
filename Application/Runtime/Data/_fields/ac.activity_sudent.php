@@ -1,0 +1,1 @@
+a:4:{i:0;s:4:"acid";i:1;s:3:"sid";i:2;s:4:"flag";s:5:"_type";a:3:{s:4:"acid";s:7:"int(11)";s:3:"sid";s:7:"int(11)";s:4:"flag";s:7:"int(11)";}}

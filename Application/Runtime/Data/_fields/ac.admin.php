@@ -1,0 +1,1 @@
+a:5:{i:0;s:3:"aid";i:1;s:5:"aname";i:2;s:4:"apwd";s:3:"_pk";s:3:"aid";s:5:"_type";a:3:{s:3:"aid";s:7:"int(11)";s:5:"aname";s:11:"varchar(20)";s:4:"apwd";s:11:"varchar(20)";}}
